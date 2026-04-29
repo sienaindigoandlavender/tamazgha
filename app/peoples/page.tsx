@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getEntitiesByType } from "@/lib/graph";
 import type { PeopleEntity } from "@/lib/types";
+import PeoplesTree from "@/components/peoples/PeoplesTree";
 
 export const metadata: Metadata = {
   title: "Peoples",
@@ -33,18 +34,32 @@ export default function PeoplesPage() {
           Forthcoming. The first entries are in preparation.
         </p>
       ) : (
-        <ul className="divide-y divide-border max-w-prose">
-          {items.map((p) => (
-            <li key={p.id}>
-              <Link
-                href={`/peoples/${p.slug}`}
-                className="block py-4 text-ink hover:text-accent transition-colors font-serif text-lg"
-              >
-                {p.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <>
+          <section className="mb-20">
+            <p className="font-sans text-[11px] uppercase tracking-[0.24em] text-tertiary mb-4">
+              The genealogy
+            </p>
+            <PeoplesTree peoples={items} />
+          </section>
+
+          <section>
+            <p className="font-sans text-[11px] uppercase tracking-[0.24em] text-tertiary mb-6">
+              Alphabetical
+            </p>
+            <ul className="divide-y divide-border max-w-prose">
+              {items.map((p) => (
+                <li key={p.id}>
+                  <Link
+                    href={`/peoples/${p.slug}`}
+                    className="block py-4 text-ink hover:text-tertiary transition-colors font-display text-xl"
+                  >
+                    {p.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </>
       )}
     </div>
   );
