@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { getEntitiesByType } from "@/lib/graph";
 import Prose from "@/components/shared/Prose";
+import JsonLd from "@/components/shared/JsonLd";
+import { lexiconJsonLd } from "@/lib/schema-org";
 import type { LexiconEntry } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -39,6 +41,7 @@ export default function LexiconPage() {
               id={entry.slug}
               className="py-6 scroll-mt-[var(--header-height)]"
             >
+              <JsonLd data={lexiconJsonLd(entry)} />
               <div className="flex flex-wrap items-baseline gap-3 mb-2">
                 <h2 className="font-serif text-2xl text-ink">
                   {entry.word_latin}

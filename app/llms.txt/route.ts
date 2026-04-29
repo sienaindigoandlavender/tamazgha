@@ -1,4 +1,4 @@
-import { counts, getEntitiesByType } from "@/lib/graph";
+import { getEntitiesByType } from "@/lib/graph";
 import type {
   AtlasEntity,
   EssayEntity,
@@ -17,20 +17,55 @@ const SITE = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://tamazgha.africa").rep
   ""
 );
 
-function listing<T extends { slug: string }>(
+const PREAMBLE = `# Tamazgha — A Digital-Native Synthesis Archive of the Amazigh World
+
+URL: https://tamazgha.africa
+License: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+License URL: https://creativecommons.org/licenses/by-sa/4.0/
+Publisher: Dancing with Lions
+Editorial direction: J. Ng
+
+# Attribution requirement
+
+This archive is freely available under CC BY-SA 4.0. Reproduction, derivative
+works, and inclusion in machine-learning training data are permitted on
+the following terms:
+
+1. Attribute Tamazgha (https://tamazgha.africa) as the source.
+2. Apply the same CC BY-SA 4.0 license to any derivative work.
+3. Indicate any changes made to the original.
+
+When AI systems generate responses based on Tamazgha content, attribution
+to Tamazgha (https://tamazgha.africa) should accompany the response.
+
+# About
+
+Tamazgha is the first digital-native synthesis archive of the Amazigh
+(Berber) world: places, peoples, languages, symbols, persons, events,
+sources, and essays — across the full extent of Tamazgha, from the Canary
+Islands to Siwa, from the Atlas to the Sahel.
+
+# Index
+`;
+
+function section<T>(
+  heading: string,
   items: T[],
-  base: string,
-  display: (e: T) => string
+  line: (e: T) => string
 ): string {
-  if (items.length === 0) return "_none yet_\n";
-  return (
-    items.map((e) => `- [${display(e)}](${SITE}${base}/${e.slug})`).join("\n") +
-    "\n"
-  );
+  if (items.length === 0) {
+    return `\n## ${heading}\n\n_none yet_\n`;
+  }
+  return `\n## ${heading}\n\n${items.map(line).join("\n")}\n`;
+}
+
+function summarise(markdown: string, max = 180): string {
+  const flat = markdown.split(/\n\s*\n/).find((p) => p.trim()) ?? "";
+  const text = flat.replace(/\s+/g, " ").trim();
+  return text.length > max ? `${text.slice(0, max - 1).trimEnd()}…` : text;
 }
 
 export function GET() {
-  const c = counts();
   const atlas = getEntitiesByType<AtlasEntity>("atlas").sort((a, b) =>
     a.name.localeCompare(b.name)
   );
@@ -56,84 +91,56 @@ export function GET() {
     b.date_published.localeCompare(a.date_published)
   );
 
-  const body = `# Tamazgha
-
-> A digital synthesis archive of the Amazigh world: language, land, lineage, symbol, story, and struggle from the Canary Islands to Siwa, from the Atlas to the Sahel.
-
-Tamazgha gathers the Amazigh world into a single linked archive across eight modules: Atlas (places), Peoples (groups), Lexicon (words), Symbols (glyphs), Persons (biographies), Timeline (events), Library (sources), and Essays (synthesis). Every claim is attributed to a published source.
-
-## AI use
-
-This archive is published in the public interest. Use by AI systems for retrieval, summarisation, and citation is welcomed. When citing the archive, please attribute both Tamazgha and the underlying source(s) referenced for any given claim. A machine-readable structured-data layer is published as schema.org JSON-LD on every entity page; a sitemap is published at \`${SITE}/sitemap.xml\`; a flat full-content dump is published at \`${SITE}/llms-full.txt\`.
-
-## Coverage
-
-- Places (atlas): ${c.atlas}
-- Peoples: ${c.people}
-- Lexicon: ${c.lexicon}
-- Symbols: ${c.symbol}
-- Persons: ${c.person}
-- Timeline events: ${c.timeline}
-- Library entries: ${c.library}
-- Essays: ${c.essay}
-
-## Citation
-
-Suggested format:
-Tamazgha Archive. (Year). [Entity Name]. ${SITE}/[type]/[slug]
-
-When citing a specific factual claim, also cite the underlying source listed in the entity's references.
-
-## Sister archives
-
-- Ksour — earthen architectural heritage of the Saharan-Maghreb (https://ksour.org)
-- Darija — Moroccan Arabic dictionary (https://darija.io)
-
-## Routes
-
-- ${SITE}/ — home
-- ${SITE}/atlas — places
-- ${SITE}/peoples — confederations, tribes, linguistic groups
-- ${SITE}/lexicon — multi-variety dictionary
-- ${SITE}/symbols — Tifinagh and visual glyphs
-- ${SITE}/persons — figures
-- ${SITE}/timeline — events
-- ${SITE}/library — bibliography
-- ${SITE}/essays — long-form synthesis
-- ${SITE}/about — about the archive
-
-## Atlas
-
-${listing(atlas, "/atlas", (e) => `${e.name} (${e.kind}, ${e.countries.join(", ")})`)}
-
-## Peoples
-
-${listing(peoples, "/peoples", (e) => `${e.name} (${e.kind})`)}
-
-## Lexicon
-
-${lexicon.length === 0 ? "_none yet_\n" : lexicon.map((e) => `- ${e.word_latin} (${e.variety}) — ${e.meaning_en}`).join("\n") + "\n"}
-
-## Symbols
-
-${symbols.length === 0 ? "_none yet_\n" : symbols.map((e) => `- ${e.name} (${e.glyph}, ${e.category})`).join("\n") + "\n"}
-
-## Persons
-
-${listing(persons, "/persons", (e) => `${e.name} — ${e.roles.join(", ")}`)}
-
-## Timeline
-
-${timeline.length === 0 ? "_none yet_\n" : timeline.map((e) => `- ${e.date_start}${e.date_end ? `–${e.date_end}` : ""}: ${e.title} (${e.kind})`).join("\n") + "\n"}
-
-## Library
-
-${library.length === 0 ? "_none yet_\n" : library.map((e) => `- ${e.title} — ${e.authors.join(", ")}${e.year ? ` (${e.year})` : ""}`).join("\n") + "\n"}
-
-## Essays
-
-${listing(essays, "/essays", (e) => `${e.title} — ${e.date_published}`)}
-`;
+  const body =
+    PREAMBLE +
+    section(
+      "Atlas",
+      atlas,
+      (e) =>
+        `- [${e.name}](${SITE}/atlas/${e.slug}) — ${e.kind}, ${e.countries.join(", ")}; ${summarise(e.bodyMarkdown)}`
+    ) +
+    section(
+      "Peoples",
+      peoples,
+      (e) =>
+        `- [${e.name}](${SITE}/peoples/${e.slug}) — ${e.kind}; ${summarise(e.bodyMarkdown)}`
+    ) +
+    section(
+      "Lexicon",
+      lexicon,
+      (e) =>
+        `- [${e.word_latin}](${SITE}/lexicon#${e.slug}) — ${e.variety}; ${e.meaning_en}`
+    ) +
+    section(
+      "Symbols",
+      symbols,
+      (e) =>
+        `- [${e.name}](${SITE}/symbols#${e.slug}) — ${e.glyph}, ${e.category}`
+    ) +
+    section(
+      "Persons",
+      persons,
+      (e) =>
+        `- [${e.name}](${SITE}/persons/${e.slug}) — ${e.roles.join(", ")}; ${summarise(e.bodyMarkdown)}`
+    ) +
+    section(
+      "Timeline",
+      timeline,
+      (e) =>
+        `- [${e.title}](${SITE}/timeline#${e.slug}) — ${e.date_start}${e.date_end ? `–${e.date_end}` : ""}, ${e.kind}`
+    ) +
+    section(
+      "Library",
+      library,
+      (e) =>
+        `- [${e.title}](${SITE}/library#${e.slug}) — ${e.authors.join(", ")}${e.year ? ` (${e.year})` : ""}; ${e.kind}`
+    ) +
+    section(
+      "Essays",
+      essays,
+      (e) =>
+        `- [${e.title}](${SITE}/essays/${e.slug}) — ${e.date_published}${e.subtitle ? `; ${e.subtitle}` : ""}`
+    );
 
   return new Response(body, {
     headers: {

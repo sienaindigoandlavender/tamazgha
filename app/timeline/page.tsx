@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { getEntitiesByType } from "@/lib/graph";
 import Prose from "@/components/shared/Prose";
+import JsonLd from "@/components/shared/JsonLd";
+import { timelineJsonLd } from "@/lib/schema-org";
 import type { TimelineEntity } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -39,6 +41,7 @@ export default function TimelinePage() {
               id={event.slug}
               className="py-6 scroll-mt-[var(--header-height)]"
             >
+              <JsonLd data={timelineJsonLd(event)} />
               <p className="font-mono text-[11px] uppercase tracking-wide text-tertiary mb-2">
                 {event.date_start}
                 {event.date_end ? ` – ${event.date_end}` : ""} · {event.kind}
