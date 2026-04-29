@@ -75,8 +75,15 @@ export default function PeopleDetailPage({
       </article>
 
       <section className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 border-t border-border pt-10">
+        <EntityRefList
+          label="Parent group"
+          ids={entity.parent_group ? [entity.parent_group] : []}
+        />
         <EntityRefList label="Homeland" ids={entity.homeland_atlas} />
         <EntityRefList label="Notable persons" ids={entity.notable_persons} />
+      </section>
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        <EntityRefList label="Subgroups" ids={entity.sub_groups} />
         <EntityRefList label="Sources" ids={entity.sources} />
       </section>
 

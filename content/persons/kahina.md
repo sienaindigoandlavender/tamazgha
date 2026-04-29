@@ -11,7 +11,7 @@ birth: c. 7th century
 death: c. 703
 roles: [warrior, ruler]
 countries: [algeria]
-peoples: []
+peoples: [people-chaoui]
 associated_atlas: [atlas-aures]
 related_events: []
 sources: [lib-julien-histoire-afrique-nord]
