@@ -12,8 +12,8 @@ exonyms: [Touaregs, Kel Tamasheq, Kel Tagelmust, "the blue people"]
 countries: [algeria, libya, niger, mali, burkina-faso]
 language: tamasheq
 population_estimate: ~3 million
-homeland_atlas: [atlas-hoggar, atlas-tassili-najjer, atlas-agadez]
-sub_groups: [people-kel-ahaggar, people-kel-ajjer, people-kel-air]
+homeland_atlas: [atlas-hoggar, atlas-tassili-najjer, atlas-agadez, atlas-adrar-des-iforas, atlas-kidal]
+sub_groups: [people-kel-ahaggar, people-kel-ajjer, people-kel-air, people-kel-adagh]
 notable_persons: []
 sources: [lib-julien-histoire-afrique-nord, lib-foucauld-dictionnaire-touareg]
 ---
