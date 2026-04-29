@@ -40,7 +40,7 @@ export const TRADE_ROUTES: TradeRoute[] = [
       { name: "Touat oases", lat: 27.873, lng: -0.29 },
       { name: "Awdaghust", lat: 17.583, lng: -10.367 },
       { name: "Walata", lat: 17.272, lng: -7.031 },
-      { name: "Timbuktu", lat: 16.773, lng: -3.009 },
+      { name: "Timbuktu", lat: 16.773, lng: -3.009, atlas: "atlas-timbuktu" },
     ],
   },
   {
@@ -60,7 +60,7 @@ export const TRADE_ROUTES: TradeRoute[] = [
       { name: "Chinguetti", lat: 20.46, lng: -12.36, atlas: "atlas-chinguetti" },
       { name: "Tichitt", lat: 18.46, lng: -9.5, atlas: "atlas-tichitt" },
       { name: "Walata", lat: 17.272, lng: -7.031 },
-      { name: "Timbuktu", lat: 16.773, lng: -3.009 },
+      { name: "Timbuktu", lat: 16.773, lng: -3.009, atlas: "atlas-timbuktu" },
     ],
   },
   {
@@ -79,7 +79,7 @@ export const TRADE_ROUTES: TradeRoute[] = [
       { name: "Sijilmasa (Tafilalt)", lat: 31.279, lng: -4.276, atlas: "atlas-tafilalt" },
       { name: "Touat oases", lat: 27.873, lng: -0.29 },
       { name: "Adrar des Iforas", lat: 19.5, lng: 1.5, atlas: "atlas-adrar-des-iforas" },
-      { name: "Gao", lat: 16.272, lng: -0.044 },
+      { name: "Gao", lat: 16.272, lng: -0.044, atlas: "atlas-gao" },
     ],
   },
   {

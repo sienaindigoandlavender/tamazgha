@@ -7,7 +7,7 @@ date_start: "1591-03-13"
 date_end: "1612"
 kind: medieval
 countries: [morocco, mali]
-related_atlas: [atlas-tafilalt, atlas-marrakesh]
+related_atlas: [atlas-tafilalt, atlas-marrakesh, atlas-gao, atlas-timbuktu]
 related_peoples: []
 sources: [lib-julien-histoire-afrique-nord]
 ---
