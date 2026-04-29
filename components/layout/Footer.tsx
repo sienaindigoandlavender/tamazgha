@@ -9,6 +9,7 @@ const modules = [
   { href: "/timeline", label: "Timeline" },
   { href: "/library", label: "Library" },
   { href: "/essays", label: "Essays" },
+  { href: "/languages", label: "Languages" },
   { href: "/about", label: "About" },
   { href: "/license", label: "License" },
 ];
