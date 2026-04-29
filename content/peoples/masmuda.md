@@ -11,7 +11,7 @@ endonym: Imesmuden
 exonyms: [Masmuda, Maṣāmida]
 countries: [morocco]
 homeland_atlas: [atlas-atlas-mountains, atlas-souss]
-notable_persons: []
+notable_persons: [person-ibn-tumart, person-abd-al-mumin]
 sources: [lib-julien-histoire-afrique-nord]
 ---
 

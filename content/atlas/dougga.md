@@ -14,7 +14,7 @@ lng: 9.22
 languages: []
 peoples: []
 related_persons: []
-sources: [lib-julien-histoire-afrique-nord]
+sources: [lib-julien-histoire-afrique-nord, lib-cambridge-history-africa-vol2]
 ---
 
 Dougga is a Numidian and Roman archaeological site in the upland country of northwestern Tunisia, sixty kilometres from the modern town of Téboursouk. The pre-Roman city of Thugga was an important Numidian centre of the kingdom of Massinissa, and remains the largest preserved Numidian-Roman urban site in the Maghreb.

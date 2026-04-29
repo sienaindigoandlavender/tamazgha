@@ -15,7 +15,7 @@ population_estimate: ~30,000
 languages: [siwi]
 peoples: []
 related_persons: []
-sources: []
+sources: [lib-bates-eastern-libyans]
 ---
 
 Siwa is the westernmost outpost of Tamazgha, an oasis in Egypt's Western Desert some fifty kilometres from the Libyan border and three hundred kilometres south of the Mediterranean coast. Its depression sits below sea level and supports salt lakes, date palms, and olive groves.

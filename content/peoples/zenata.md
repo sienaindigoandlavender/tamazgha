@@ -11,7 +11,7 @@ endonym: Iznaten
 exonyms: [Zenete, Zanāta]
 countries: [morocco, algeria, tunisia, libya]
 homeland_atlas: [atlas-atlas-mountains, atlas-rif]
-notable_persons: []
+notable_persons: [person-tariq-ibn-ziyad, person-abd-al-mumin]
 sources: [lib-julien-histoire-afrique-nord]
 ---
 
