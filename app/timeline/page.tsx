@@ -3,6 +3,7 @@ import { getEntitiesByType } from "@/lib/graph";
 import Prose from "@/components/shared/Prose";
 import JsonLd from "@/components/shared/JsonLd";
 import EntityRefList from "@/components/shared/EntityRefList";
+import TimelineCanvas from "@/components/timeline/TimelineCanvas";
 import { timelineJsonLd } from "@/lib/schema-org";
 import type { TimelineEntity } from "@/lib/types";
 
@@ -55,7 +56,18 @@ export default function TimelinePage() {
           Forthcoming. The first entries are in preparation.
         </p>
       ) : (
-        <ul className="divide-y divide-border">
+        <>
+          <section className="mb-16">
+            <p className="font-sans text-[11px] uppercase tracking-[0.24em] text-tertiary mb-4">
+              The canvas
+            </p>
+            <TimelineCanvas events={items} />
+          </section>
+
+          <p className="font-sans text-[11px] uppercase tracking-[0.24em] text-tertiary mb-6">
+            The events
+          </p>
+          <ul className="divide-y divide-border">
           {items.map((event) => (
             <li
               key={event.id}
@@ -90,7 +102,8 @@ export default function TimelinePage() {
               </div>
             </li>
           ))}
-        </ul>
+          </ul>
+        </>
       )}
     </div>
   );
