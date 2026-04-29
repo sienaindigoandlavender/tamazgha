@@ -14,7 +14,7 @@ countries: [algeria]
 peoples: []
 associated_atlas: [atlas-constantine]
 related_events: []
-sources: [lib-julien-histoire-afrique-nord]
+sources: [lib-julien-histoire-afrique-nord, lib-sallust-bellum-iugurthinum, lib-camps-aux-origines]
 ---
 
 Jugurtha was a grandson of Massinissa, raised at the Numidian court of his uncle Micipsa and trained in the Roman manner during a long campaign at Numantia in Iberia under Scipio Aemilianus. On Micipsa's death in 118 BCE the kingdom was divided between Jugurtha and his cousins Adherbal and Hiempsal; Jugurtha eliminated Hiempsal in 117 and Adherbal at Cirta in 112, provoking direct Roman intervention.

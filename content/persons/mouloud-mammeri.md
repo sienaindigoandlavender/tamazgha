@@ -14,7 +14,7 @@ countries: [algeria]
 peoples: [people-kabyles]
 associated_atlas: [atlas-kabylia]
 related_events: [event-berber-spring]
-sources: []
+sources: [lib-maddy-weitzman-berber-identity, lib-mammeri-poemes-kabyles]
 ---
 
 Mouloud Mammeri was the principal Berber-Algerian writer, ethnographer, and linguist of the twentieth century. Born in 1917 in Taourirt-Mimoun in the village of Aït Yenni in Greater Kabylia, he was educated at French lycées in Rabat and Algiers and at the Sorbonne in Paris, where he studied classics and modern letters before returning to Algeria as a teacher.

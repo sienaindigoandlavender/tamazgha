@@ -15,7 +15,7 @@ population_estimate: ~3 million
 homeland_atlas: [atlas-hoggar, atlas-tassili-najjer, atlas-agadez]
 sub_groups: [people-kel-ahaggar, people-kel-ajjer, people-kel-air]
 notable_persons: []
-sources: [lib-julien-histoire-afrique-nord]
+sources: [lib-julien-histoire-afrique-nord, lib-foucauld-dictionnaire-touareg]
 ---
 
 The Tuareg are the southernmost Berber-speaking population, inhabiting a Saharan and Sahelian arc that runs from southern Algeria and southwestern Libya through northern Niger, northern Mali, and into Burkina Faso. They call themselves Imuhagh in the north and Imushagh or Kel Tamasheq further south.

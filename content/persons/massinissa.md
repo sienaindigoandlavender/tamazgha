@@ -14,7 +14,7 @@ countries: [algeria, tunisia]
 peoples: []
 associated_atlas: [atlas-constantine, atlas-dougga]
 related_events: [event-massinissa-unifies-numidia]
-sources: [lib-julien-histoire-afrique-nord]
+sources: [lib-julien-histoire-afrique-nord, lib-sallust-bellum-iugurthinum, lib-camps-aux-origines]
 ---
 
 Massinissa, in his own coinage Massensen, was the first king of a politically unified Numidia. The eastern Massyli prince fought first as a Carthaginian ally in Iberia during the Second Punic War, defected to Rome before the Battle of Zama in 202 BCE, and was confirmed by the Roman peace settlement as ruler of an enlarged kingdom from the Mulucha river in the west to the borders of Carthaginian territory in the east.

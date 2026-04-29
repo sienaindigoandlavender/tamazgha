@@ -14,7 +14,7 @@ lng: 9.0
 languages: [tamasheq]
 peoples: []
 related_persons: []
-sources: []
+sources: [lib-lhote-tassili-fresques]
 ---
 
 The Tassili n'Ajjer is a sandstone plateau of southeastern Algeria, extending over seventy-two thousand square kilometres along the Libyan border between the Hoggar and the Erg Admer. Its name in Tamasheq means roughly "plateau of the rivers", a reference to the wadis that cut deep canyons across its surface.

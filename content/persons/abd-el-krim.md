@@ -14,7 +14,7 @@ countries: [morocco]
 peoples: [people-rifians]
 associated_atlas: [atlas-rif]
 related_events: [event-republic-of-the-rif]
-sources: []
+sources: [lib-maddy-weitzman-berber-identity]
 ---
 
 Muhammad ibn Abd al-Karim al-Khattabi was the founder of the Republic of the Rif and the principal Berber anti-colonial commander of the early twentieth century. Born in 1882 in Ajdir near Al Hoceima in the central Rif, he was educated in Spanish at Melilla and in Arabic and Islamic law at the Qarawiyyin in Fez before returning to the Rif as a teacher, journalist, and judge under the Spanish protectorate administration.

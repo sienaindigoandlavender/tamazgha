@@ -14,7 +14,7 @@ language: tamazight-central
 population_estimate: ~330,000
 homeland_atlas: [atlas-atlas-mountains]
 notable_persons: []
-sources: []
+sources: [lib-hart-dadda-atta]
 ---
 
 The Aït Atta are a major confederation of central southern Morocco, a five-fifths confederation (Khams Khmas) of mountain and pre-Saharan tribes whose territory extends from the Jebel Saghro and the eastern Anti-Atlas south into the Drâa basin and east into the Tafilalt.

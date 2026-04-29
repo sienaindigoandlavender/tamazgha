@@ -15,7 +15,7 @@ population_estimate: ~6 million
 sub_groups: []
 homeland_atlas: [atlas-kabylia]
 notable_persons: []
-sources: [lib-julien-histoire-afrique-nord]
+sources: [lib-julien-histoire-afrique-nord, lib-maddy-weitzman-berber-identity, lib-mammeri-poemes-kabyles]
 ---
 
 The Kabyles, in their own language Iqbayliyen, are the largest Berber-speaking population of north Africa. Their language, Taqbaylit, is the most widely spoken and best-documented variety of Tamazight, with around six million speakers in Kabylia and a substantial diaspora in France and Belgium.

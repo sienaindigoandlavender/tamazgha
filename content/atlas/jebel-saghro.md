@@ -14,7 +14,7 @@ lng: -5.80
 languages: [tamazight-central, tachelhit]
 peoples: [people-ait-atta]
 related_persons: []
-sources: []
+sources: [lib-hart-dadda-atta]
 ---
 
 The Jebel Saghro is a volcanic mountain massif of southeastern Morocco, set between the Drâa to the south and the High Atlas to the north and reaching its highest point at Amalou n Mansour at 2,712 metres. The range marks the geological boundary between the Anti-Atlas and the High Atlas, and the climatic boundary between the Mediterranean and the pre-Saharan zones.

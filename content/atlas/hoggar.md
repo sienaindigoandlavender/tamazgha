@@ -14,7 +14,7 @@ lng: 5.5
 languages: [tamasheq]
 peoples: []
 related_persons: []
-sources: []
+sources: [lib-foucauld-dictionnaire-touareg]
 ---
 
 The Hoggar, in Tamasheq Ahaggar, is a high volcanic plateau in the central Sahara of southern Algeria, rising to 2,908 metres at Mount Tahat. Its core is a basalt and trachyte massif punctuated by older crystalline outcrops; the Atakor sub-range concentrates the most dramatic landscape of basaltic necks and plugs.
