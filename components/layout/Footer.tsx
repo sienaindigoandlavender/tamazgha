@@ -10,6 +10,7 @@ const modules = [
   { href: "/library", label: "Library" },
   { href: "/essays", label: "Essays" },
   { href: "/languages", label: "Languages" },
+  { href: "/trade-routes", label: "Routes" },
   { href: "/license", label: "License" },
 ];
 
