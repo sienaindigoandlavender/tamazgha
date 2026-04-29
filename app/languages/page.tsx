@@ -58,10 +58,10 @@ export default function LanguagesPage() {
         <p className="font-mono text-[11px] uppercase tracking-wide text-tertiary mb-3">
           Languages
         </p>
-        <h1 className="font-serif text-5xl leading-[1.05] text-ink mb-4">
+        <h1 className="editorial-h1 text-[56px] md:text-[72px] text-ink mb-5">
           Tamazight, in twelve varieties.
         </h1>
-        <p className="font-serif italic text-xl text-secondary max-w-prose">
+        <p className="editorial-italic text-[22px] text-secondary max-w-prose">
           From the Atlantic Ocean to the Western Desert, from the Mediterranean
           coast to the Sahel — a single language family, multiply named.
         </p>

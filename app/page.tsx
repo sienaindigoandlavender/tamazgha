@@ -10,7 +10,7 @@ const HomeAtlasMap = dynamic(() => import("@/components/home/HomeAtlasMap"), {
   ssr: false,
   loading: () => (
     <div className="h-full w-full min-h-[420px] flex items-center justify-center bg-codebg border border-border">
-      <p className="font-mono text-[11px] uppercase tracking-wide text-tertiary">
+      <p className="font-sans text-[11px] uppercase tracking-[0.2em] text-tertiary">
         Loading map…
       </p>
     </div>
@@ -82,53 +82,53 @@ export default function HomePage() {
   const sites = getEntitiesByType<AtlasEntity>("atlas");
 
   return (
-    <div className="max-w-content mx-auto px-6 py-16">
+    <div className="max-w-content mx-auto px-6 py-24 md:py-32">
       <JsonLd data={organizationJsonLd()} />
       <JsonLd data={websiteJsonLd()} />
 
-      <section className="mb-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+      <section className="mb-28 grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
         <div className="flex flex-col justify-center max-w-prose">
-          <p className="font-mono text-[11px] uppercase tracking-wide text-tertiary mb-6">
+          <p className="font-sans text-[11px] uppercase tracking-[0.24em] text-tertiary mb-8">
             A Synthesis Archive
           </p>
-          <h1 className="font-serif text-[40px] md:text-[64px] leading-[1.05] text-ink mb-3">
+          <h1 className="editorial-h1 text-[56px] md:text-[88px] text-ink mb-5">
             Tamazgha
           </h1>
-          <p className="tifinagh text-base text-tertiary mb-4">ⵜⴰⵎⴰⵣⵖⴰ</p>
-          <p className="font-serif italic text-[18px] text-secondary mb-6">
+          <p className="tifinagh text-lg text-tertiary mb-6">ⵜⴰⵎⴰⵣⵖⴰ</p>
+          <p className="editorial-italic text-[22px] text-secondary mb-8 leading-snug">
             The Amazigh world, from the Canary Islands to Siwa.
           </p>
-          <p className="text-[16px] text-secondary leading-relaxed">
+          <p className="text-[16px] text-secondary leading-[1.85]">
             Tamazgha gathers the language, land, lineage, symbols, persons,
             events, and texts of the Amazigh world into a single linked
             archive, attributing every claim to a published source.
           </p>
         </div>
-        <div className="flex flex-col min-h-[420px] lg:min-h-[480px]">
+        <div className="flex flex-col min-h-[420px] lg:min-h-[520px]">
           <div className="flex-1 min-h-[420px]">
             <HomeAtlasMap sites={sites} />
           </div>
-          <div className="mt-3 flex items-center justify-between font-mono text-[11px] uppercase tracking-wide text-tertiary">
+          <div className="mt-4 flex items-center justify-between font-sans text-[11px] uppercase tracking-[0.22em] text-tertiary">
             <span>The places currently in the atlas</span>
-            <Link href="/atlas" className="hover:text-accent transition-colors">
+            <Link href="/atlas" className="hover:text-ink transition-colors">
               Open atlas →
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="mb-16 border-t border-l border-border">
+      <section className="mb-24 border-t border-l border-border">
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {tiles.map((tile) => (
             <li key={tile.href} className="border-b border-r border-border">
               <Link
                 href={tile.href}
-                className="group flex flex-col h-full px-8 py-12 min-h-[220px]"
+                className="group flex flex-col h-full px-10 py-16 min-h-[260px]"
               >
-                <p className="font-mono text-[11px] uppercase tracking-wide text-tertiary group-hover:text-ink group-hover:underline underline-offset-4 mb-10 self-start">
+                <p className="font-sans text-[11px] uppercase tracking-[0.24em] text-tertiary group-hover:text-ink transition-colors mb-12 self-start">
                   {tile.label}
                 </p>
-                <p className="font-serif italic text-[14px] text-ink leading-snug text-left">
+                <p className="editorial-italic text-[16px] text-ink leading-snug text-left">
                   {tile.description}
                 </p>
               </Link>
@@ -138,7 +138,7 @@ export default function HomePage() {
       </section>
 
       <section className="text-center">
-        <p className="font-mono text-[11px] uppercase tracking-wide text-tertiary">
+        <p className="font-sans text-[11px] uppercase tracking-[0.24em] text-tertiary">
           Last updated {formatLastUpdated(generatedAt)}
         </p>
       </section>

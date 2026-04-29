@@ -16,7 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/timeline",
     "/library",
     "/essays",
-    "/about",
     "/license",
     "/search",
     "/languages",

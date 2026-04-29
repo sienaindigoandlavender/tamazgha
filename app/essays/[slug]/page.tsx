@@ -50,14 +50,14 @@ export default function EssayDetailPage({
       </div>
 
       <header className="mb-12 pb-8 border-b border-border max-w-prose">
-        <p className="font-mono text-[11px] uppercase tracking-wide text-tertiary mb-3">
+        <p className="font-sans text-[11px] uppercase tracking-[0.24em] text-tertiary mb-4">
           Essay · {proseDate(entity.date_published)}
         </p>
-        <h1 className="font-serif text-5xl leading-[1.05] text-ink mb-3">
+        <h1 className="editorial-h1 text-[56px] md:text-[72px] text-ink mb-4">
           {entity.title}
         </h1>
         {entity.subtitle ? (
-          <p className="font-serif text-xl text-secondary leading-snug">
+          <p className="editorial-italic text-[22px] text-secondary leading-snug">
             {entity.subtitle}
           </p>
         ) : null}
