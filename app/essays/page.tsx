@@ -15,15 +15,15 @@ export default function EssaysPage() {
   );
 
   return (
-    <div className="max-w-content mx-auto px-6 py-16">
+    <div className="max-w-content mx-auto px-6 py-24">
       <header className="mb-12 pb-8 border-b border-border">
-        <p className="font-mono text-[11px] uppercase tracking-wide text-tertiary mb-3">
+        <p className="font-sans text-[11px] uppercase tracking-[0.24em] text-tertiary mb-4">
           Module
         </p>
-        <h1 className="font-serif text-5xl leading-[1.05] text-ink mb-3">
+        <h1 className="editorial-h1 text-[52px] md:text-[64px] text-ink mb-4">
           Essays
         </h1>
-        <p className="font-serif italic text-xl text-secondary max-w-prose">
+        <p className="editorial-italic text-[22px] text-secondary max-w-prose">
           Long-form synthesis from the archive's editors.
         </p>
       </header>

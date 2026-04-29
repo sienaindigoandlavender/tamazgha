@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Source_Serif_4, Inter, IBM_Plex_Mono } from "next/font/google";
+import {
+  Source_Serif_4,
+  Inter,
+  IBM_Plex_Mono,
+  Cormorant_Garamond,
+} from "next/font/google";
 import localFont from "next/font/local";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -10,6 +15,14 @@ import "./globals.css";
 const serif = Source_Serif_4({
   subsets: ["latin"],
   variable: "--font-serif",
+  display: "swap",
+});
+
+const display = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  style: ["normal", "italic"],
+  variable: "--font-display",
   display: "swap",
 });
 
@@ -101,7 +114,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${serif.variable} ${sans.variable} ${mono.variable} ${tifinagh.variable}`}
+      className={`${serif.variable} ${display.variable} ${sans.variable} ${mono.variable} ${tifinagh.variable}`}
     >
       <body>
         <Header />

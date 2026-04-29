@@ -9,35 +9,38 @@ const modules = [
   { href: "/timeline", label: "Timeline" },
   { href: "/library", label: "Library" },
   { href: "/essays", label: "Essays" },
-  { href: "/about", label: "About" },
+  { href: "/languages", label: "Languages" },
   { href: "/license", label: "License" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border mt-24 bg-white">
-      <div className="max-w-content mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-meta text-tertiary">
+    <footer className="border-t border-border mt-32 bg-white">
+      <div className="max-w-content mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-12 text-meta text-tertiary">
         <div>
-          <p className="font-serif text-base text-ink mb-2">Tamazgha</p>
-          <p className="leading-relaxed">
+          <p className="font-display text-xl text-ink mb-3">Tamazgha</p>
+          <p className="leading-[1.8]">
             A digital synthesis archive of the Amazigh world: language, land,
             lineage, symbol, story, and struggle from the Canary Islands to
             Siwa.
           </p>
-          <p className="mt-4 font-mono text-[11px] uppercase tracking-wide">
-            <Link href="/license" className="hover:text-accent transition-colors">
+          <p className="mt-5 font-sans text-[11px] uppercase tracking-[0.2em]">
+            <Link href="/license" className="hover:text-ink transition-colors">
               Licensed CC BY-SA 4.0 → /license
             </Link>
           </p>
         </div>
         <div>
-          <p className="text-ink mb-3 font-mono uppercase tracking-wide">
+          <p className="text-ink mb-4 font-sans text-[11px] uppercase tracking-[0.22em]">
             Modules
           </p>
-          <ul className="space-y-1">
+          <ul className="space-y-2">
             {modules.map((m) => (
               <li key={m.href}>
-                <Link href={m.href} className="hover:text-accent transition-colors">
+                <Link
+                  href={m.href}
+                  className="font-sans text-[11px] uppercase tracking-[0.2em] hover:text-ink transition-colors"
+                >
                   {m.label}
                 </Link>
               </li>
@@ -45,16 +48,16 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <p className="text-ink mb-3 font-mono uppercase tracking-wide">
+          <p className="text-ink mb-4 font-sans text-[11px] uppercase tracking-[0.22em]">
             Sister archives
           </p>
-          <ul className="space-y-1">
+          <ul className="space-y-2">
             <li>
               <a
                 href="https://ksour.org"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-accent transition-colors"
+                className="hover:text-ink transition-colors"
               >
                 Ksour — Earthen architectural heritage
               </a>
@@ -64,18 +67,17 @@ export default function Footer() {
                 href="https://darija.io"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-accent transition-colors"
+                className="hover:text-ink transition-colors"
               >
                 Darija — Moroccan Arabic dictionary
               </a>
             </li>
           </ul>
-          <p className="mt-4">Editorial direction: J. Ng</p>
         </div>
       </div>
-      <div className="max-w-content mx-auto px-6 py-6 border-t border-border text-meta text-tertiary flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      <div className="max-w-content mx-auto px-6 py-7 border-t border-border text-meta text-tertiary flex flex-col md:flex-row md:items-center md:justify-between gap-3">
         <p>© Tamazgha. A Dancing with Lions project.</p>
-        <p className="font-mono uppercase tracking-wide">
+        <p className="font-sans text-[11px] uppercase tracking-[0.22em]">
           Synthesis of public scholarly and institutional work
         </p>
       </div>

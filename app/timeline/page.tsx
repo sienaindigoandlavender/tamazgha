@@ -3,6 +3,7 @@ import { getEntitiesByType } from "@/lib/graph";
 import Prose from "@/components/shared/Prose";
 import JsonLd from "@/components/shared/JsonLd";
 import EntityRefList from "@/components/shared/EntityRefList";
+import TimelineCanvas from "@/components/timeline/TimelineCanvas";
 import { timelineJsonLd } from "@/lib/schema-org";
 import type { TimelineEntity } from "@/lib/types";
 
@@ -37,15 +38,15 @@ export default function TimelinePage() {
   });
 
   return (
-    <div className="max-w-content mx-auto px-6 py-16">
+    <div className="max-w-content mx-auto px-6 py-24">
       <header className="mb-12 pb-8 border-b border-border">
-        <p className="font-mono text-[11px] uppercase tracking-wide text-tertiary mb-3">
+        <p className="font-sans text-[11px] uppercase tracking-[0.24em] text-tertiary mb-4">
           Module
         </p>
-        <h1 className="font-serif text-5xl leading-[1.05] text-ink mb-3">
+        <h1 className="editorial-h1 text-[52px] md:text-[64px] text-ink mb-4">
           Timeline
         </h1>
-        <p className="font-serif italic text-xl text-secondary max-w-prose">
+        <p className="editorial-italic text-[22px] text-secondary max-w-prose">
           Ten thousand years on a single canvas.
         </p>
       </header>
@@ -55,7 +56,18 @@ export default function TimelinePage() {
           Forthcoming. The first entries are in preparation.
         </p>
       ) : (
-        <ul className="divide-y divide-border">
+        <>
+          <section className="mb-16">
+            <p className="font-sans text-[11px] uppercase tracking-[0.24em] text-tertiary mb-4">
+              The canvas
+            </p>
+            <TimelineCanvas events={items} />
+          </section>
+
+          <p className="font-sans text-[11px] uppercase tracking-[0.24em] text-tertiary mb-6">
+            The events
+          </p>
+          <ul className="divide-y divide-border">
           {items.map((event) => (
             <li
               key={event.id}
@@ -90,7 +102,8 @@ export default function TimelinePage() {
               </div>
             </li>
           ))}
-        </ul>
+          </ul>
+        </>
       )}
     </div>
   );

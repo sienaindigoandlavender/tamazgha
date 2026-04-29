@@ -15,7 +15,7 @@ export default function LicensePage() {
           <p className="font-mono text-[11px] uppercase tracking-wide text-tertiary mb-4">
             License
           </p>
-          <h1 className="font-serif text-5xl text-ink leading-[1.05]">
+          <h1 className="editorial-h1 text-[56px] md:text-[72px] text-ink">
             Use, share, adapt — with attribution.
           </h1>
         </header>
