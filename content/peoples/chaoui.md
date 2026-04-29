@@ -13,7 +13,7 @@ countries: [algeria]
 language: chaoui
 population_estimate: ~2 million
 homeland_atlas: [atlas-aures]
-notable_persons: [person-kahina]
+notable_persons: [person-kahina, person-kateb-yacine, person-ben-boulaid]
 sources: [lib-julien-histoire-afrique-nord]
 ---
 
