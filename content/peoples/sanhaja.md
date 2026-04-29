@@ -10,8 +10,8 @@ name_ar: صنهاجة
 endonym: Iẓnagen
 exonyms: [Sanhaja, Senhaja, Zenaga]
 countries: [morocco, mauritania, algeria, mali, niger]
-homeland_atlas: [atlas-atlas-mountains, atlas-hoggar]
-notable_persons: []
+homeland_atlas: [atlas-atlas-mountains, atlas-hoggar, atlas-mauritanian-adrar, atlas-chinguetti, atlas-ouadane]
+notable_persons: [person-yusuf-ibn-tashfin]
 sources: [lib-julien-histoire-afrique-nord]
 ---
 

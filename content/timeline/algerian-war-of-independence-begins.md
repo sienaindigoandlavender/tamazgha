@@ -9,7 +9,7 @@ kind: modern
 countries: [algeria]
 related_atlas: [atlas-aures, atlas-kabylia]
 related_peoples: [people-chaoui, people-kabyles]
-sources: []
+sources: [lib-maddy-weitzman-berber-identity]
 ---
 
 In the early hours of 1 November 1954 — All Saints' Day, "la Toussaint rouge" — the Front de Libération Nationale launched some seventy coordinated attacks across Algeria against French military, police, and infrastructure targets. The principal operations took place in the Aurès massif under the command of Mostefa Ben Boulaïd of Wilaya I, and in eastern Kabylia under Krim Belkacem and Ouamrane of Wilaya III. The proclamation issued the same day from Cairo declared the goal of an independent, sovereign, social-democratic Algerian state.

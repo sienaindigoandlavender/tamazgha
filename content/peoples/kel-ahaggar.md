@@ -13,7 +13,7 @@ countries: [algeria]
 language: tamasheq
 parent_group: people-tuareg
 homeland_atlas: [atlas-hoggar]
-notable_persons: []
+notable_persons: [person-tin-hinan]
 sources: []
 ---
 

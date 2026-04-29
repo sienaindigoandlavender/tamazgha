@@ -14,7 +14,7 @@ language: tarifit
 population_estimate: ~5 million
 homeland_atlas: [atlas-rif]
 notable_persons: []
-sources: []
+sources: [lib-maddy-weitzman-berber-identity, lib-hart-aith-waryaghar]
 ---
 
 The Rifians, in their own language Iriffiyen, are the Tamazight-speaking population of the Rif mountains of northern Morocco. Their variety, Tarifit, is the northern branch of Tamazight, with several internal dialects (Beni Iznasen, Aith Waryaghar, Aith Touzin among them) and an estimated five million speakers including the diaspora.

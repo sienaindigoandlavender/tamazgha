@@ -14,7 +14,7 @@ lng: -7.5
 languages: [tachelhit, tamazight-central, kabyle, chaoui]
 peoples: []
 related_persons: []
-sources: []
+sources: [lib-brett-fentress-berbers, lib-encyclopedie-berbere, lib-galand-etudes-berbere]
 ---
 
 The Atlas Mountains are the principal mountain system of northwest Africa, arcing some two thousand five hundred kilometres from the Atlantic coast of southwestern Morocco to the Mediterranean cape of northeastern Tunisia. They form the geographical and symbolic spine of Tamazgha and shape its climate, its hydrology, and its political geography.
