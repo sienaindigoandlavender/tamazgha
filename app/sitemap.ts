@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/essays",
     "/about",
     "/license",
+    "/search",
   ].map((p) => ({ url: `${SITE}${p}`, lastModified: now }));
 
   const atlas = getEntitiesByType("atlas").map((e) => ({

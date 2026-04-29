@@ -58,7 +58,12 @@ const languages: { value: LanguageVariety | "all"; label: string }[] = [
 
 export default function AtlasFilters({ filters, onChange, counts }: Props) {
   const sel =
-    "border border-border bg-white px-3 py-2 font-mono text-[11px] uppercase tracking-wide text-ink hover:border-accent focus:outline-none focus:border-accent";
+    "appearance-none bg-transparent border-0 border-b border-border px-1 py-2 pr-6 font-mono text-[11px] uppercase tracking-wide text-ink hover:border-accent focus:outline-none focus:border-accent cursor-pointer bg-no-repeat bg-[right_center] bg-[length:10px_10px]";
+
+  const chevron = {
+    backgroundImage:
+      "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23737373' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='2 4 6 8 10 4'/></svg>\")",
+  };
 
   return (
     <div className="sticky top-[var(--header-height)] z-20 border-b border-border bg-white">
@@ -68,7 +73,7 @@ export default function AtlasFilters({ filters, onChange, counts }: Props) {
           onChange={(e) =>
             onChange({ ...filters, country: e.target.value as Country | "all" })
           }
-          className={sel}
+          className={sel} style={chevron}
         >
           {countries.map((c) => (
             <option key={c.value} value={c.value}>
@@ -82,7 +87,7 @@ export default function AtlasFilters({ filters, onChange, counts }: Props) {
           onChange={(e) =>
             onChange({ ...filters, kind: e.target.value as AtlasKind | "all" })
           }
-          className={sel}
+          className={sel} style={chevron}
         >
           {kinds.map((c) => (
             <option key={c.value} value={c.value}>
@@ -99,7 +104,7 @@ export default function AtlasFilters({ filters, onChange, counts }: Props) {
               language: e.target.value as LanguageVariety | "all",
             })
           }
-          className={sel}
+          className={sel} style={chevron}
         >
           {languages.map((c) => (
             <option key={c.value} value={c.value}>

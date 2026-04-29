@@ -104,8 +104,8 @@ export default function HomePage() {
             archive, attributing every claim to a published source.
           </p>
         </div>
-        <div className="lg:min-h-[480px] flex flex-col">
-          <div className="flex-1">
+        <div className="flex flex-col min-h-[420px] lg:min-h-[480px]">
+          <div className="flex-1 min-h-[420px]">
             <HomeAtlasMap sites={sites} />
           </div>
           <div className="mt-3 flex items-center justify-between font-mono text-[11px] uppercase tracking-wide text-tertiary">
