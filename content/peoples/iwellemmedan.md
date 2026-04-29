@@ -12,7 +12,7 @@ exonyms: [Iullemmeden, Aulliminden, Oulliminden]
 countries: [niger, mali]
 language: tamasheq
 parent_group: people-tuareg
-homeland_atlas: [atlas-adrar-des-iforas]
+homeland_atlas: [atlas-adrar-des-iforas, atlas-gao, atlas-timbuktu]
 notable_persons: []
 sources: []
 ---

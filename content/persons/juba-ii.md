@@ -12,7 +12,7 @@ death: "23 CE"
 roles: [ruler, scholar, writer]
 countries: [morocco, algeria]
 peoples: []
-associated_atlas: [atlas-volubilis]
+associated_atlas: [atlas-volubilis, atlas-cherchell]
 related_events: []
 sources: [lib-julien-histoire-afrique-nord]
 ---
