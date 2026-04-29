@@ -13,8 +13,6 @@ const navItems = [
   { href: "/timeline", label: "Timeline" },
   { href: "/library", label: "Library" },
   { href: "/essays", label: "Essays" },
-  { href: "/languages", label: "Languages" },
-  { href: "/license", label: "License" },
 ];
 
 function SearchIcon({ className }: { className?: string }) {
