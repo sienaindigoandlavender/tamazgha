@@ -13,7 +13,7 @@ countries: [niger, mali]
 language: tamasheq
 parent_group: people-tuareg
 homeland_atlas: [atlas-adrar-des-iforas, atlas-gao, atlas-timbuktu]
-notable_persons: []
+notable_persons: [person-mano-dayak, person-ibrahim-ag-alhabib]
 sources: []
 ---
 
