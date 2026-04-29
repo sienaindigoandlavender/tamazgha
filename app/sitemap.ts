@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/search",
     "/languages",
     "/trade-routes",
+    "/centuries",
   ].map((p) => ({ url: `${SITE}${p}`, lastModified: now }));
 
   const atlas = getEntitiesByType("atlas").map((e) => ({
