@@ -14,7 +14,7 @@ language: kabyle
 population_estimate: ~6 million
 sub_groups: []
 homeland_atlas: [atlas-kabylia]
-notable_persons: [person-mouloud-mammeri, person-idir, person-matoub-lounes, person-ferhat-mehenni, person-ait-menguellet, person-tassadit-yacine, person-slimane-azem, person-lalla-fatma-nsoumer]
+notable_persons: [person-mouloud-mammeri, person-idir, person-matoub-lounes, person-ferhat-mehenni, person-ait-menguellet, person-tassadit-yacine, person-slimane-azem, person-lalla-fatma-nsoumer, person-cherifa, person-nouara, person-djura]
 sources: [lib-julien-histoire-afrique-nord, lib-maddy-weitzman-berber-identity, lib-mammeri-poemes-kabyles, lib-hanoteau-letourneux-kabylie, lib-yacine-izli]
 ---
 

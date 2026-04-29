@@ -13,7 +13,7 @@ countries: [mali]
 language: tamasheq
 parent_group: people-tuareg
 homeland_atlas: [atlas-adrar-des-iforas, atlas-kidal]
-notable_persons: []
+notable_persons: [person-ibrahim-ag-alhabib]
 sources: []
 ---
 

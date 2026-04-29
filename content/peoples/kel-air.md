@@ -13,7 +13,7 @@ countries: [niger]
 language: tamasheq
 parent_group: people-tuareg
 homeland_atlas: [atlas-agadez]
-notable_persons: []
+notable_persons: [person-mano-dayak]
 sources: []
 ---
 
