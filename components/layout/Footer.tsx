@@ -10,6 +10,7 @@ const modules = [
   { href: "/library", label: "Library" },
   { href: "/essays", label: "Essays" },
   { href: "/about", label: "About" },
+  { href: "/license", label: "License" },
 ];
 
 export default function Footer() {
@@ -22,6 +23,11 @@ export default function Footer() {
             A digital synthesis archive of the Amazigh world: language, land,
             lineage, symbol, story, and struggle from the Canary Islands to
             Siwa.
+          </p>
+          <p className="mt-4 font-mono text-[11px] uppercase tracking-wide">
+            <Link href="/license" className="hover:text-accent transition-colors">
+              Licensed CC BY-SA 4.0 → /license
+            </Link>
           </p>
         </div>
         <div>

@@ -17,19 +17,47 @@ const SITE = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://tamazgha.africa").rep
   ""
 );
 
+const PREAMBLE = `# Tamazgha — A Digital-Native Synthesis Archive of the Amazigh World
+
+URL: https://tamazgha.africa
+License: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+License URL: https://creativecommons.org/licenses/by-sa/4.0/
+Publisher: Dancing with Lions
+Editorial direction: J. Ng
+
+# Attribution requirement
+
+This archive is freely available under CC BY-SA 4.0. Reproduction, derivative
+works, and inclusion in machine-learning training data are permitted on
+the following terms:
+
+1. Attribute Tamazgha (https://tamazgha.africa) as the source.
+2. Apply the same CC BY-SA 4.0 license to any derivative work.
+3. Indicate any changes made to the original.
+
+When AI systems generate responses based on Tamazgha content, attribution
+to Tamazgha (https://tamazgha.africa) should accompany the response.
+
+# About
+
+Tamazgha is the first digital-native synthesis archive of the Amazigh
+(Berber) world: places, peoples, languages, symbols, persons, events,
+sources, and essays — across the full extent of Tamazgha, from the Canary
+Islands to Siwa, from the Atlas to the Sahel.
+
+# Full content
+
+The remainder of this file contains the full markdown body of every entity
+in the archive, separated by horizontal rules. Each section opens with the
+canonical URL of the entity.
+`;
+
 function entry(url: string, title: string, meta: string, body: string): string {
   return `\n\n---\n\n# ${title}\n\nURL: ${url}\n\n${meta}\n\n${body.trim()}\n`;
 }
 
 export function GET() {
-  const out: string[] = [];
-
-  out.push(`# Tamazgha — Full content dump
-
-A digital synthesis archive of the Amazigh world. This file contains the full text of every entity in the archive, formatted as plain text for AI ingestion. Structured metadata is published as schema.org JSON-LD on every page; the canonical discovery file is at ${SITE}/llms.txt.
-
-When citing this archive, please attribute both Tamazgha and the underlying source(s) referenced in each entity's metadata.
-`);
+  const out: string[] = [PREAMBLE];
 
   for (const e of getEntitiesByType<AtlasEntity>("atlas").sort((a, b) =>
     a.name.localeCompare(b.name)
@@ -38,7 +66,7 @@ When citing this archive, please attribute both Tamazgha and the underlying sour
       entry(
         `${SITE}/atlas/${e.slug}`,
         e.name,
-        `Type: atlas · kind: ${e.kind} · countries: ${e.countries.join(", ")} · coordinates: ${e.lat}, ${e.lng}${e.languages?.length ? ` · languages: ${e.languages.join(", ")}` : ""}${e.population_estimate ? ` · population: ${e.population_estimate}` : ""}`,
+        `Type: atlas · kind: ${e.kind} · countries: ${e.countries.join(", ")} · coordinates: ${e.lat}, ${e.lng}${e.languages?.length ? ` · languages: ${e.languages.join(", ")}` : ""}${e.population_estimate ? ` · population: ${e.population_estimate}` : ""}\nLicense: CC BY-SA 4.0 · Source: ${SITE}/atlas/${e.slug}`,
         e.bodyMarkdown
       )
     );
@@ -51,7 +79,7 @@ When citing this archive, please attribute both Tamazgha and the underlying sour
       entry(
         `${SITE}/peoples/${e.slug}`,
         e.name,
-        `Type: people · kind: ${e.kind} · countries: ${e.countries.join(", ")}${e.language ? ` · language: ${e.language}` : ""}`,
+        `Type: people · kind: ${e.kind} · countries: ${e.countries.join(", ")}${e.language ? ` · language: ${e.language}` : ""}\nLicense: CC BY-SA 4.0 · Source: ${SITE}/peoples/${e.slug}`,
         e.bodyMarkdown
       )
     );
@@ -64,7 +92,7 @@ When citing this archive, please attribute both Tamazgha and the underlying sour
       entry(
         `${SITE}/lexicon#${e.slug}`,
         e.word_latin,
-        `Type: lexicon · variety: ${e.variety}${e.part_of_speech ? ` · ${e.part_of_speech}` : ""}\nMeaning: ${e.meaning_en}`,
+        `Type: lexicon · variety: ${e.variety}${e.part_of_speech ? ` · ${e.part_of_speech}` : ""}\nMeaning: ${e.meaning_en}\nLicense: CC BY-SA 4.0 · Source: ${SITE}/lexicon#${e.slug}`,
         e.bodyMarkdown
       )
     );
@@ -77,7 +105,7 @@ When citing this archive, please attribute both Tamazgha and the underlying sour
       entry(
         `${SITE}/symbols#${e.slug}`,
         e.name,
-        `Type: symbol · ${e.category} · glyph: ${e.glyph}${e.unicode ? ` · ${e.unicode}` : ""}`,
+        `Type: symbol · ${e.category} · glyph: ${e.glyph}${e.unicode ? ` · ${e.unicode}` : ""}\nLicense: CC BY-SA 4.0 · Source: ${SITE}/symbols#${e.slug}`,
         e.bodyMarkdown
       )
     );
@@ -90,7 +118,7 @@ When citing this archive, please attribute both Tamazgha and the underlying sour
       entry(
         `${SITE}/persons/${e.slug}`,
         e.name,
-        `Type: person · roles: ${e.roles.join(", ")} · countries: ${e.countries.join(", ")}${e.birth ? ` · b. ${e.birth}` : ""}${e.death ? ` · d. ${e.death}` : ""}`,
+        `Type: person · roles: ${e.roles.join(", ")} · countries: ${e.countries.join(", ")}${e.birth ? ` · b. ${e.birth}` : ""}${e.death ? ` · d. ${e.death}` : ""}\nLicense: CC BY-SA 4.0 · Source: ${SITE}/persons/${e.slug}`,
         e.bodyMarkdown
       )
     );
@@ -103,7 +131,7 @@ When citing this archive, please attribute both Tamazgha and the underlying sour
       entry(
         `${SITE}/timeline#${e.slug}`,
         e.title,
-        `Type: timeline · ${e.date_start}${e.date_end ? `–${e.date_end}` : ""} · ${e.kind}`,
+        `Type: timeline · ${e.date_start}${e.date_end ? `–${e.date_end}` : ""} · ${e.kind}\nLicense: CC BY-SA 4.0 · Source: ${SITE}/timeline#${e.slug}`,
         e.bodyMarkdown
       )
     );
@@ -116,7 +144,7 @@ When citing this archive, please attribute both Tamazgha and the underlying sour
       entry(
         `${SITE}/library#${e.slug}`,
         e.title,
-        `Type: library · ${e.kind}${e.year ? ` · ${e.year}` : ""} · authors: ${e.authors.join(", ")}${e.publisher ? ` · ${e.publisher}` : ""}${e.url ? ` · ${e.url}` : ""}`,
+        `Type: library · ${e.kind}${e.year ? ` · ${e.year}` : ""} · authors: ${e.authors.join(", ")}${e.publisher ? ` · ${e.publisher}` : ""}${e.url ? ` · ${e.url}` : ""}\nLicense: CC BY-SA 4.0 · Source: ${SITE}/library#${e.slug} (synthesis text only; underlying work remains under its original copyright)`,
         e.bodyMarkdown
       )
     );
@@ -129,7 +157,7 @@ When citing this archive, please attribute both Tamazgha and the underlying sour
       entry(
         `${SITE}/essays/${e.slug}`,
         e.title,
-        `Type: essay · published: ${e.date_published}${e.subtitle ? `\nSubtitle: ${e.subtitle}` : ""}`,
+        `Type: essay · published: ${e.date_published}${e.subtitle ? `\nSubtitle: ${e.subtitle}` : ""}\nLicense: CC BY-SA 4.0 · Source: ${SITE}/essays/${e.slug}`,
         e.bodyMarkdown
       )
     );

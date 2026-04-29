@@ -30,10 +30,12 @@ entity type and one route:
 | Peoples   | `/peoples`  | people   | stub            |
 | Lexicon   | `/lexicon`  | lexicon  | stub            |
 | Symbols   | `/symbols`  | symbol   | stub            |
-| Persons   | `/persons`  | person   | stub            |
+| Persons   | `/persons`  | person   | 1 seed entry    |
 | Timeline  | `/timeline` | timeline | stub            |
 | Library   | `/library`  | library  | 1 seed entry    |
 | Essays    | `/essays`   | essay    | stub            |
+
+The `/about` and `/license` static pages also resolve.
 
 Stub modules render as proper list pages with a "Forthcoming" message; every
 URL works on day one.
@@ -84,23 +86,32 @@ npm run validate-graph
   a small "Mapbox token not configured." message and the rest of the site
   works.
 
+## License
+
+Tamazgha is published under Creative Commons Attribution-ShareAlike 4.0
+International (CC BY-SA 4.0) — the same license used by Wikipedia.
+See [`/license`](https://tamazgha.africa/license),
+[`/llms.txt`](https://tamazgha.africa/llms.txt), and the
+JSON-LD `license`/`creator`/`publisher` fields on every entity page.
+
 ## Decisions made during this build
 
 These choices were made where the brief was silent or self-conflicting:
 
-1. **One library entry was added even though Phase 7 specifies "Atlas only,
-   this pass."** The audit checklist requires backlinks to render correctly
-   on at least one atlas detail page. Atlas-to-atlas references are not in
-   the brief's `REFERENCE_RELATIONS` schema, so the only schema-permitted way
-   to produce a backlink on an atlas page is to have another module entity
-   reference an atlas entry via `sources`, `peoples`, or `related_persons`.
-   I added one library entity (`lib-julien-histoire-afrique-nord`) and had
-   the Aurès atlas entry cite it. The Aurès page therefore shows a
-   "Referenced in" panel with the library entry under the "cites" relation.
+1. **One library entry and one person entry were added even though Phase 7
+   specifies "Atlas only, this pass."** The audit checklist requires
+   backlinks to render correctly on at least one atlas detail page.
+   Atlas-to-atlas references are not in the brief's `REFERENCE_RELATIONS`
+   schema, so the only schema-permitted way to produce a backlink on an
+   atlas page is to have another module entity reference an atlas entry.
+   I added `lib-julien-histoire-afrique-nord` (cited by Aurès via
+   `sources`) and `person-kahina` (associated with Aurès via
+   `associated_atlas`). The Aurès page therefore shows a populated
+   "Referenced in" panel.
 
 2. **The Tifinagh wordmark `ⵜⴰⵎⴰⵣⵖⴰ`** appears in the header beneath the
-   "Tamazgha" wordmark, in the `--font-tifinagh` family, at 11px tracked
-   uppercase. The home page H1 also carries a small Tifinagh sub-line.
+   "Tamazgha" wordmark, in the `--font-tifinagh` family. The home page H1
+   also carries a small Tifinagh sub-line.
 
 3. **Google Analytics ID is `G-PLACEHOLDER-TAMAZGHA`** with a TODO comment
    in `app/layout.tsx`. Replace once the GA4 property exists.
@@ -108,3 +119,12 @@ These choices were made where the brief was silent or self-conflicting:
 4. **Atlas country filter for the Canary Islands** is labelled
    "Spain (Canary Is.)" so it remains discoverable to readers who don't
    immediately associate the islands with Spanish jurisdiction.
+
+5. **JSON-LD attribution shape.** Every JSON-LD block emits the same
+   attribution structure required by the brief: `license`,
+   `isAccessibleForFree`, `inLanguage`, `creator` (Tamazgha), `publisher`
+   (Dancing with Lions), `dateModified` (the graph build timestamp), and
+   `isPartOf` (the Tamazgha WebSite). Atlas, Person, and Essay detail
+   pages emit one JSON-LD block per entity; the hash-anchored Lexicon,
+   Symbols, Timeline, and Library list pages emit one block per item
+   inline alongside each list entry.

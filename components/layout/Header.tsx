@@ -13,6 +13,7 @@ const navItems = [
   { href: "/library", label: "Library" },
   { href: "/essays", label: "Essays" },
   { href: "/about", label: "About" },
+  { href: "/license", label: "License" },
 ];
 
 export default function Header() {

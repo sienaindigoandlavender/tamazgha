@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { getEntitiesByType } from "@/lib/graph";
 import Prose from "@/components/shared/Prose";
+import JsonLd from "@/components/shared/JsonLd";
+import { symbolJsonLd } from "@/lib/schema-org";
 import type { SymbolEntity } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -40,6 +42,7 @@ export default function SymbolsPage() {
               id={s.slug}
               className="py-6 scroll-mt-[var(--header-height)] flex gap-6"
             >
+              <JsonLd data={symbolJsonLd(s)} />
               <span className="tifinagh text-5xl text-ink">{s.glyph}</span>
               <div className="flex-1">
                 <h2 className="font-serif text-2xl text-ink mb-1">{s.name}</h2>

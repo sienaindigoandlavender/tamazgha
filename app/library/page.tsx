@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { getEntitiesByType } from "@/lib/graph";
 import Prose from "@/components/shared/Prose";
+import JsonLd from "@/components/shared/JsonLd";
+import { libraryJsonLd } from "@/lib/schema-org";
 import type { LibraryEntity } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -39,6 +41,7 @@ export default function LibraryPage() {
               id={book.slug}
               className="py-6 scroll-mt-[var(--header-height)]"
             >
+              <JsonLd data={libraryJsonLd(book)} />
               <p className="font-mono text-[11px] uppercase tracking-wide text-tertiary mb-2">
                 {book.kind}
                 {book.year ? ` · ${book.year}` : ""}
