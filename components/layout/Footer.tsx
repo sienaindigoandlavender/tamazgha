@@ -12,6 +12,7 @@ const modules = [
   { href: "/languages", label: "Languages" },
   { href: "/trade-routes", label: "Routes" },
   { href: "/centuries", label: "Centuries" },
+  { href: "/heritage", label: "Heritage" },
   { href: "/license", label: "License" },
 ];
 

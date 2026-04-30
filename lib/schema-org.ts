@@ -26,7 +26,7 @@ const CREATOR = {
 const PUBLISHER = {
   "@type": "Organization",
   name: "Dancing with Lions",
-  url: "https://dancingwiththelions.com",
+  url: "https://dancewithlions.com",
 } as const;
 
 const PART_OF = {
