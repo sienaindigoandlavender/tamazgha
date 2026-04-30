@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/languages",
     "/trade-routes",
     "/centuries",
+    "/heritage",
   ].map((p) => ({ url: `${SITE}${p}`, lastModified: now }));
 
   const atlas = getEntitiesByType("atlas").map((e) => ({
